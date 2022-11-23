@@ -1,6 +1,10 @@
 import httpAgent from "./lib/http-agent";
 import httpsAgent from "./lib/https-agent";
 
-export const HttpAgent = httpAgent;
+export const http = {
+    agent: httpAgent,
+};
 
-export const HttpsAgent = httpsAgent;
+export const https = {
+    agent: httpsAgent,
+};
