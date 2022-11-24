@@ -6,6 +6,19 @@ on:
       tag:
         description: 'Tag to be released'
         required: true
+  push:
+    branches:
+      - 'master/**'
+      - 'feature/**'
+      - 'documentation/**'
+      - 'improvement/**'
+      - 'bugfix/**'
+      - 'w/**'
+      - 'q/**'
+      - 'hotfix/**'
+      - 'task/**'
+      - 'release/**'
+      - 'main'
 
 jobs:
   verify-release:
