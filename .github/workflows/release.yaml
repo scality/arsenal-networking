@@ -23,7 +23,7 @@ jobs:
       - name: 'Check if tag was already created'
         shell: bash
         run: >
-          git show-ref --tags v${{ github.event.inputs.tag }} --quiet \
+          git show-ref --tags ${{ github.event.inputs.tag }} --quiet \
           && exit 1 || exit 0
 
   release:
