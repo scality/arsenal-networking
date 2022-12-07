@@ -1,12 +1,12 @@
 {
-  "name": "arsenal-networking",
-  "version": "1.0.0",
+  "name": "httpagent",
+  "version": "1.0.1",
   "engines": {
     "node": ">=16"
   },
   "description": "A utility library for networking",
   "main": "build/index.js",
-  "repository": "git@github.com:scality/arsenal-networking.git",
+  "repository": "git@github.com:scality/httpagent.git",
   "author": "Scality Inc.",
   "license": "Apache-2.0",
   "scripts": {
