@@ -2,11 +2,11 @@ import * as https from 'https';
 import clientConfigurationDefault from './config/default';
 
 /**
- * @class ClientHttps
+ * @class AgentHttps
  * Abstracts the native https.Agent class to enforce common
  * networking configuration across components.
  */
- export default class ClientHttps extends https.Agent {
+ export default class AgentHttps extends https.Agent {
     /**
      * The maximum socket configuration defaults to 50.
      */
@@ -28,8 +28,8 @@ import clientConfigurationDefault from './config/default';
         const defaultConfigurations: https.AgentOptions = {};
         if (config.maxSockets) {
             defaultConfigurations.keepAlive = true;
-            defaultConfigurations.maxSockets = ClientHttps.maxSocketsConfiguration;
-            defaultConfigurations.maxFreeSockets = ClientHttps.maxSocketsConfiguration;
+            defaultConfigurations.maxSockets = AgentHttps.maxSocketsConfiguration;
+            defaultConfigurations.maxFreeSockets = AgentHttps.maxSocketsConfiguration;
         }
         super({
             ...opts,
