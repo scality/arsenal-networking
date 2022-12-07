@@ -2,18 +2,18 @@ import * as http from 'http';
 import clientConfigurationDefault from './config/default';
 
 /**
- * @class ClientHttp
+ * @class AgentHttp
  * Abstracts the native http.Agent class to enforce common
  * networking configuration across components.
  */
-export default class ClientHttp extends http.Agent {
+export default class AgentHttp extends http.Agent {
     /**
      * The maximum socket configuration defaults to 50.
      */
     private static maxSocketsConfiguration = Number(process.env.MAX_SOCKETS) || 50;
 
     /**
-     * Constructor for the ClientHttp class
+     * Constructor for the AgentHttp class
      *
      * @param opts - Custom HTTP Agent options
      * @param config - user-defined default configuration to apply
@@ -28,8 +28,8 @@ export default class ClientHttp extends http.Agent {
         const defaultConfigurations: http.AgentOptions = {};
         if (config.maxSockets) {
             defaultConfigurations.keepAlive = true;
-            defaultConfigurations.maxSockets = ClientHttp.maxSocketsConfiguration;
-            defaultConfigurations.maxFreeSockets = ClientHttp.maxSocketsConfiguration;
+            defaultConfigurations.maxSockets = AgentHttp.maxSocketsConfiguration;
+            defaultConfigurations.maxFreeSockets = AgentHttp.maxSocketsConfiguration;
         }
         super({
             ...opts,
