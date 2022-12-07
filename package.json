@@ -10,7 +10,7 @@
   "author": "Scality Inc.",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "tsc --build tsconfig.json",
+    "build": "tsc  --declaration; tsc --build tsconfig.json",
     "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
     "prepare": "yarn build || true",
     "eslint": "eslint ./ --ext .js,.ts,.tsx",

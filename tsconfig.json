@@ -16,7 +16,7 @@
       "sourceMap": true,
       "declarationMap": true
   },
-  "include": ["index.ts", "lib"],
+  "include": ["index.ts", "lib/**/*"],
   "exclude": ["node_modules/*"],
   "compileOnSave": true
 }
