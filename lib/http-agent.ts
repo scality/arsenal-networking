@@ -1,6 +1,6 @@
 import HttpAgent, { HttpOptions } from 'agentkeepalive';
 import clientConfigurationDefault from './config/default';
-import maxSocketsConfiguration from './config/maxSockets';
+import agentConfiguration from './config/agentConfiguration';
 
 /**
  * @class AgentHttpKeepAlive
@@ -23,7 +23,7 @@ export default class AgentHttp extends HttpAgent {
         // Enforce TCP session reuse configuration, unless explicitely specified.
         let defaultConfigurations: HttpOptions = {};
         if (config.maxSockets) {
-            defaultConfigurations = maxSocketsConfiguration;
+            defaultConfigurations = agentConfiguration;
         }
         super({
             ...opts,

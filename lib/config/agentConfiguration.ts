@@ -10,10 +10,10 @@ const maxSocketsNumber = Number(process.env.MAX_SOCKETS) || 50;
  * The goal is to enforce a `maxSockets` property to properly
  * handle load.
  */
-const maxSocketsConfiguration: http.AgentOptions  = {
+const agentConfiguration: http.AgentOptions = {
     keepAlive: true,
     maxSockets: maxSocketsNumber,
     maxFreeSockets: maxSocketsNumber,
 }
 
-export default maxSocketsConfiguration;
+export default agentConfiguration;
