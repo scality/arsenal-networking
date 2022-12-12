@@ -19,7 +19,8 @@
     "lint": "eslint ./ --ext .js,.ts,.tsx --format visualstudio --no-color --max-warnings 10 --report-unused-disable-directives"
   },
   "dependencies": {
-    "@types/node": "^18.11.9"
+    "@types/node": "^18.11.9",
+    "agentkeepalive": "^4.2.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.44.0",
