@@ -1,5 +1,6 @@
 import * as https from 'https';
 import clientConfigurationDefault from './config/default';
+import maxSocketsConfiguration from './config/maxSockets';
 
 /**
  * @class AgentHttps
@@ -7,11 +8,6 @@ import clientConfigurationDefault from './config/default';
  * networking configuration across components.
  */
  export default class AgentHttps extends https.Agent {
-    /**
-     * The maximum socket configuration defaults to 50.
-     */
-    private static maxSocketsConfiguration = Number(process.env.MAX_SOCKETS) || 50;
-
     /**
      * Constructor for the ClientHttps class
      *
@@ -25,11 +21,9 @@ import clientConfigurationDefault from './config/default';
         },
     ) {
         // Enforce TCP session reuse configuration, unless explicitely specified.
-        const defaultConfigurations: https.AgentOptions = {};
+        let defaultConfigurations: https.AgentOptions = {};
         if (config.maxSockets) {
-            defaultConfigurations.keepAlive = true;
-            defaultConfigurations.maxSockets = AgentHttps.maxSocketsConfiguration;
-            defaultConfigurations.maxFreeSockets = AgentHttps.maxSocketsConfiguration;
+            defaultConfigurations = maxSocketsConfiguration;
         }
         super({
             ...opts,
