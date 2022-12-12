@@ -3,13 +3,13 @@ import clientConfigurationDefault from './config/default';
 import agentConfiguration from './config/agentConfiguration';
 
 /**
- * @class AgentHttpKeepAlive
+ * @class AgentHttp
  * Abstracts the native HttpAgent class from agentkeepalive to enforce common
  * networking configuration across components.
  */
 export default class AgentHttp extends HttpAgent {
     /**
-     * Constructor for the AgentHttpKeepAlive class
+     * Constructor for the AgentHttp class
      *
      * @param opts - Custom HTTP Agent options
      * @param config - user-defined default configuration to apply
