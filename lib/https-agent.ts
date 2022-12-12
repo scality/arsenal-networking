@@ -1,27 +1,27 @@
-import * as https from 'https';
+import HttpsAgent, { HttpsOptions } from 'agentkeepalive';
 import clientConfigurationDefault from './config/default';
 import maxSocketsConfiguration from './config/maxSockets';
 
 /**
- * @class AgentHttps
- * Abstracts the native https.Agent class to enforce common
+ * @class AgentHttpsKeepAlive
+ * Abstracts the native HttpsAgent class from agentkeepalive to enforce common
  * networking configuration across components.
  */
- export default class AgentHttps extends https.Agent {
+export default class AgentHttps extends HttpsAgent {
     /**
-     * Constructor for the ClientHttps class
+     * Constructor for the AgentHttpsKeepAlive class
      *
-     * @param opts - Custom HTTPs Agent options
+     * @param opts - Custom HTTP Agent options
      * @param config - user-defined default configuration to apply
      */
     constructor(
-        opts?: https.AgentOptions,
+        opts?: HttpsOptions,
         config: clientConfigurationDefault = {
             maxSockets: true,
         },
     ) {
         // Enforce TCP session reuse configuration, unless explicitely specified.
-        let defaultConfigurations: https.AgentOptions = {};
+        let defaultConfigurations: HttpsOptions = {};
         if (config.maxSockets) {
             defaultConfigurations = maxSocketsConfiguration;
         }
