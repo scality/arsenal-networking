@@ -1,17 +1,13 @@
-import * as http from 'http';
+import HttpAgent, { HttpOptions } from 'agentkeepalive';
 import clientConfigurationDefault from './config/default';
+import agentConfiguration from './config/agentConfiguration';
 
 /**
  * @class AgentHttp
- * Abstracts the native http.Agent class to enforce common
+ * Abstracts the native HttpAgent class from agentkeepalive to enforce common
  * networking configuration across components.
  */
-export default class AgentHttp extends http.Agent {
-    /**
-     * The maximum socket configuration defaults to 50.
-     */
-    private static maxSocketsConfiguration = Number(process.env.MAX_SOCKETS) || 50;
-
+export default class AgentHttp extends HttpAgent {
     /**
      * Constructor for the AgentHttp class
      *
@@ -19,17 +15,15 @@ export default class AgentHttp extends http.Agent {
      * @param config - user-defined default configuration to apply
      */
     constructor(
-        opts?: http.AgentOptions,
+        opts?: HttpOptions,
         config: clientConfigurationDefault = {
             maxSockets: true,
         },
     ) {
         // Enforce TCP session reuse configuration, unless explicitely specified.
-        const defaultConfigurations: http.AgentOptions = {};
+        let defaultConfigurations: HttpOptions = {};
         if (config.maxSockets) {
-            defaultConfigurations.keepAlive = true;
-            defaultConfigurations.maxSockets = AgentHttp.maxSocketsConfiguration;
-            defaultConfigurations.maxFreeSockets = AgentHttp.maxSocketsConfiguration;
+            defaultConfigurations = agentConfiguration;
         }
         super({
             ...opts,
