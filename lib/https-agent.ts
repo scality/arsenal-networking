@@ -1,4 +1,4 @@
-import HttpsAgent, { HttpsOptions } from 'agentkeepalive';
+import { HttpsAgent, HttpsOptions } from 'agentkeepalive';
 import clientConfigurationDefault from './config/default';
 import agentConfiguration from './config/agentConfiguration';
 
