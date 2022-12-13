@@ -1,6 +1,7 @@
 {
   "name": "httpagent",
   "version": "1.0.4",
+  "type": "module",
   "engines": {
     "node": ">=16"
   },
