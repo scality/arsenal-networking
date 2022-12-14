@@ -1,6 +1,4 @@
-import * as http from 'http';
-import * as https from 'https';
-import { HttpAgent, HttpsAgent } from 'agentkeepalive';
+import HttpAgent, { HttpsAgent } from 'agentkeepalive';
 
 import { HttpsOptions, HttpOptions } from 'agentkeepalive';
 
@@ -29,6 +27,3 @@ declare namespace https {
         constructor(opts?: HttpsOptions, config?: clientConfigurationDefault);
     }
 }
-
-exports.http = http;
-exports.https = https;
