@@ -1,10 +1,11 @@
-const agentConfiguration = require('./lib/config/agentConfiguration');
+/* eslint-disable global-require */
 
-const httpAgent = require('./lib/http-agent');
-const httpsAgent = require('./lib/http-agent');
+exports.http = {
+  Agent: require('./lib/http-agent').default,
+};
 
-exports.HttpAgent = httpAgent;
+exports.https = {
+  Agent: require('./lib/https-agent').default,
+};
 
-exports.HttpsAgent = httpsAgent;
-
-exports.AgentConfiguration = agentConfiguration;
+exports.AgentConfiguration = require('./lib/config/agentConfiguration').default;
