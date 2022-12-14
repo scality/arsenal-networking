@@ -5,33 +5,27 @@
     "node": ">=16"
   },
   "description": "A utility library for networking",
-  "main": "build/index.js",
+  "main": "index.js",
   "repository": "git@github.com:scality/httpagent.git",
   "author": "Scality Inc.",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "tsc  --declaration; tsc --build tsconfig.json",
     "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
-    "prepare": "yarn build || true",
     "eslint": "eslint ./ --ext .js,.ts,.tsx",
     "eslint-fix": "eslint ./ --ext .js,.ts,.tsx --fix",
     "eslint-init": "eslint --init",
     "lint": "eslint ./ --ext .js,.ts,.tsx --format visualstudio --no-color --max-warnings 10 --report-unused-disable-directives"
   },
   "dependencies": {
-    "@types/node": "^18.11.9",
     "agentkeepalive": "^4.2.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "^8.28.0",
+    "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-scality": "git+https://github.com/scality/Guidelines#8.2.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.0",
-    "typescript": "^4.9.3"
+    "prettier": "^2.8.0"
   }
 }

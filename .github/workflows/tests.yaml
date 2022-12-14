@@ -32,5 +32,4 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: run lint
         run: yarn run eslint
-      - name: run build
-        run: yarn build
+
