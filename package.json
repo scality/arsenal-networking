@@ -13,8 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
     "eslint": "eslint ./ --ext .js,.ts,.tsx",
     "eslint-fix": "eslint ./ --ext .js,.ts,.tsx --fix",
-    "eslint-init": "eslint --init",
-    "lint": "eslint ./ --ext .js,.ts,.tsx --format visualstudio --no-color --max-warnings 10 --report-unused-disable-directives"
+    "eslint-init": "eslint --init"
   },
   "dependencies": {
     "agentkeepalive": "^4.2.1"
