@@ -16,15 +16,15 @@
     "eslint-init": "eslint --init"
   },
   "dependencies": {
-    "agentkeepalive": "^4.2.1"
+    "agentkeepalive": "^4.5.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-scality": "git+https://github.com/scality/Guidelines#8.2.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.0"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-scality": "scality/Guidelines#8.2.1",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3"
   }
 }
