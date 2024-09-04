@@ -2,7 +2,7 @@
   "name": "httpagent",
   "version": "1.0.6",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "description": "A utility library for networking",
   "main": "index.js",
