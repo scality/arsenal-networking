@@ -11,20 +11,15 @@
   "license": "Apache-2.0",
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
-    "eslint": "eslint ./ --ext .js,.ts,.tsx",
-    "eslint-fix": "eslint ./ --ext .js,.ts,.tsx --fix",
+    "eslint": "eslint ./",
+    "eslint-fix": "eslint ./",
     "eslint-init": "eslint --init"
   },
   "dependencies": {
     "agentkeepalive": "^4.5.0"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-scality": "scality/Guidelines#8.2.1",
-    "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3"
+    "eslint": "^9.9.1",
+    "eslint-config-scality": "git+https://github.com/scality/Guidelines#55744570f79c95d2b15ed3c9e47b884a5cacb98e"
   }
 }
