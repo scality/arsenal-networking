@@ -1,8 +1,8 @@
 {
   "name": "httpagent",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "description": "A utility library for networking",
   "main": "index.js",
@@ -11,20 +11,15 @@
   "license": "Apache-2.0",
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
-    "eslint": "eslint ./ --ext .js,.ts,.tsx",
-    "eslint-fix": "eslint ./ --ext .js,.ts,.tsx --fix",
+    "eslint": "eslint ./",
+    "eslint-fix": "eslint ./",
     "eslint-init": "eslint --init"
   },
   "dependencies": {
-    "agentkeepalive": "^4.2.1"
+    "agentkeepalive": "^4.5.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0 || ^8.2.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-scality": "git+https://github.com/scality/Guidelines#8.2.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.0"
+    "eslint": "^9.9.1",
+    "eslint-config-scality": "git+https://github.com/scality/Guidelines#8.3.0"
   }
 }
