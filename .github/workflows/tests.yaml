@@ -17,7 +17,13 @@ on:
 
 jobs:
   tests:
+    name: tests (with node ${{ matrix.node }})
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - '20'
+          - '22'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +31,7 @@ jobs:
         run: sudo apt-get update -q
       - uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node }}
       - name: Install Yarn
         run: npm install -g yarn
       - name: install dependencies
